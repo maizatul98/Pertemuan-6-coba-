@@ -5,6 +5,7 @@ class Mahasiswa extends CI_Controller {
     {
         parent::__construct();
         $this->load->model('Mahasiswa_model');
+        
     }
     
     public function index()

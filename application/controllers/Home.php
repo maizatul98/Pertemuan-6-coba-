@@ -5,8 +5,8 @@ class Home extends CI_Controller {
     {
         $data['judul'] = 'Halaman Home';
         $data['nama'] = $nama;
-        $this->load->view('template/header', $data);
+        $this->load->view('templates/header', $data);
         $this->load->view('home/index', $data);
-        $this->load->view('template/footer');
+        $this->load->view('templates/footer');
     }
 }

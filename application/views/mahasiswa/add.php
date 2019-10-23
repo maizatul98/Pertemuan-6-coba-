@@ -18,6 +18,7 @@
                          <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" name="name" class="form-control" id="name">
+                            <small class="form-text text-danger"><?= form_error('name'); ?></small>
                         </div>
 
                         <div class="form-group">

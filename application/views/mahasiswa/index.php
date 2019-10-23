@@ -16,7 +16,7 @@
 
     <div class="row-mt-3">
         <div class="col-md-6">
-            <a href="" class="btn btn-primary">Add Data Mahasiswa</a>
+            <a href="<?= base_url(); ?>mahasiswa/add/" class="btn btn-primary">Add Data Mahasiswa</a>
         </div>
     </div>
 
@@ -29,6 +29,10 @@
                         <?= $mhs['name']; ?>
                         <a href="<?= base_url(); ?>mahasiswa/delete/<?= $mhs['studentID']; ?>" 
                         class="badge badge-danger float-right" onclick="return confirm('Are you sure?');">delete</a>
+                        <a href="<?= base_url(); ?>mahasiswa/edit/<?= $mhs['studentID']; ?>" 
+                        class="badge badge-success float-right">edit</a>
+                        <a href="<?= base_url(); ?>mahasiswa/detail/<?= $mhs['studentID']; ?>" 
+                        class="badge badge-primary float-right">detail</a>
                     </li>
                 <?php endforeach; ?>
             </ul>

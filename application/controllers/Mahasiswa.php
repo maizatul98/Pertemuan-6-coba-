@@ -46,4 +46,13 @@ class Mahasiswa extends CI_Controller {
         $this->session->set_flashdata('flash', 'Deleted');
         redirect('mahasiswa');
     }
+
+    public function detail($studentID)
+    {
+        $data['judul'] = 'Detail Data Mahasiswa';
+        $data['mahasiswa'] = $this->Mahasiswa_model->getMahasiswaById($studentID);
+        $this->load->view('templates/header', $data);
+        $this->load->view('mahasiswa/detail', $data);
+        $this->load->view('templates/footer');
+    }
 }

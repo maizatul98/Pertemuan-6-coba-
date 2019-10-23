@@ -15,10 +15,11 @@ class People extends CI_Controller {
         //config
         $config['base_url'] = 'http://localhost/rek-web/mahasiswa-CI/people/index';
         $config['total_rows'] = $this->people->countAllPeople();
-        $config['per_page'] = 12;
+        $config['per_page'] = 8;
+        $config['num_links'] = 5;
         
         //styling
-        $config['full_tag_open'] = '<nav><ul class="pagination">';
+        $config['full_tag_open'] = '<nav><ul class="pagination justify-content-center">';
         $config['full_tag_close'] = '</ul></nav>';
 
         $config['first_link'] = 'First';

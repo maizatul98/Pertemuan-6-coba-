@@ -11,4 +11,9 @@ class People_model extends CI_Model
     {
         return $this->db->get('people', $limit, $start)->result_array();
     }
+
+    public function countAllPeople()
+    {
+        return $this->db->get('people')->num_rows();
+    }
 }

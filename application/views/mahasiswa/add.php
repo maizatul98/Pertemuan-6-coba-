@@ -7,13 +7,7 @@
                 <div class="card-header">
                     Form Add Data Mahasiswa
                 </div>
-                <div class="card-body">
-                    <?php if( validation_errors() ) : ?>
-                        <div class="alert alert-danger" role="alert">
-                            <?= validation_errors(); ?>
-                        </div>
-                    <?php endif; ?>
-                        
+                <div class="card-body">  
                     <form action="" method="post">
                          <div class="form-group">
                             <label for="name">Name</label>
@@ -24,11 +18,13 @@
                         <div class="form-group">
                             <label for="matricNo">Matric No</label>
                             <input type="text" name="matricNo" class="form-control" id="matricNo">
+                            <small class="form-text text-danger"><?= form_error('matricNo'); ?></small>
                         </div>
 
                         <div class="form-group">
                             <label for="email">Email</label>
                             <input type="email" name="email" class="form-control" id="email">
+                            <small class="form-text text-danger"><?= form_error('email'); ?></small>
                         </div>
                             
                         <div class="form-group">

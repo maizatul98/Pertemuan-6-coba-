@@ -55,4 +55,26 @@ class Mahasiswa extends CI_Controller {
         $this->load->view('mahasiswa/detail', $data);
         $this->load->view('templates/footer');
     }
+
+    public function edit($studentID)
+    {
+        $data['judul'] = 'Form Edit Data Mahasiswa';
+        $data['mahasiswa'] = $this->Mahasiswa_model->getMahasiswaById($studentID);
+        $data['course'] = ['Software Engineering', 'Artificial Intelligence', 'Information System', 'Networking', 'Data Science'];
+
+        $this->form_validation->set_rules('name', 'Name', 'required');
+        $this->form_validation->set_rules('matricNo', 'Matric No', 'required|numeric');
+        $this->form_validation->set_rules('email', 'Email', 'required|valid_email');
+
+        if( $this->form_validation->run() == FALSE ) {
+            $this->load->view('templates/header', $data);
+            $this->load->view('mahasiswa/edit', $data);
+            $this->load->view('templates/footer');
+        } else {
+            $this->Mahasiswa_model->editDataMahasiswa();
+            $this->session->set_flashdata('flash', 'Edited');
+            redirect('mahasiswa');
+        }
+
+    }
 }

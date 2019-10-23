@@ -38,7 +38,7 @@
             <h3>Daftar Mahasiswa</h3>
             <?php if( empty($mahasiswa) ) : ?>
                 <div class="alert alert-danger" role="alert">
-                 The data is not exist!
+                 The data is not exist! 
                 </div>
             <?php endif; ?>
             <ul class="list-group">

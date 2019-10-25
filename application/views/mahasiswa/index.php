@@ -1,6 +1,7 @@
 <div class="container">
+    <div class="flash-data" data-flashdata="<?= $this->session->flashdata('flash'); ?>"></div>
     <?php if( $this->session->flashdata('flash') ) : ?>
-        <div class="div ror-mt-3">
+        <!-- <div class="div ror-mt-3">
         <div class="div col-md-6">
             <div class="alert alert-success alert-dismissible fade show" role="alert">
                 Data Mahasiswa<strong> successfully </strong><?= $this->session->flashdata('flash'); ?>
@@ -11,7 +12,9 @@
         
         </div>
 
-    </div>
+    </div> -->
+
+
 <?php endif; ?>
 
     <div class="row-mt-3">
@@ -46,7 +49,7 @@
                     <li class="list-group-item">
                         <?= $mhs['name']; ?>
                         <a href="<?= base_url(); ?>mahasiswa/delete/<?= $mhs['studentID']; ?>" 
-                        class="badge badge-danger float-right" onclick="return confirm('Are you sure?');">delete</a>
+                        class="badge badge-danger float-right tombol-hapus">delete</a>
                         <a href="<?= base_url(); ?>mahasiswa/edit/<?= $mhs['studentID']; ?>" 
                         class="badge badge-success float-right">edit</a>
                         <a href="<?= base_url(); ?>mahasiswa/detail/<?= $mhs['studentID']; ?>" 
